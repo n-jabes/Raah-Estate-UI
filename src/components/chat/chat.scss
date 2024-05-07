@@ -1,0 +1,183 @@
+@import '../../responsive.scss';
+
+.chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include lg {
+    flex-direction: row;
+  }
+
+  @include sm {
+    flex-direction: column;
+  }
+
+  .messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    padding-right: 5px;
+    padding-bottom: 10px;
+
+    h1 {
+      font-weight: 300;
+      font-size: 28px;
+      position: sticky;
+      top: 0;
+      padding: 5px 0;
+      background: #fcf5f3;
+
+      @include sm {
+        top: -3px;
+      }
+    }
+
+    .message {
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 10px 20px;
+      gap: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+
+      @include sm {
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .chatBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+
+    .top {
+      background: #f7c14b85;
+      padding: 15px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include lg {
+        flex: 1;
+      }
+
+      @include lg {
+        flex: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 32px;
+          height: 32px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+
+      .close {
+        cursor: pointer;
+      }
+    }
+
+    .center {
+      height: 30vh;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+
+      @include lg {
+        flex: 10;
+        height: none;
+      }
+
+      @include lg {
+        flex: none;
+      }
+
+      .chatMessage {
+        width: 50%;
+        font-size: 14px;
+        border: 1px solid #f7c14b85;
+        border-radius: 10px;
+        padding: 5px;
+
+        @include sm {
+          width: 75%;
+        }
+
+        &.own {
+          align-self: flex-end;
+          text-align: right;
+          border: 1px solid #f7c14b85;
+        }
+
+        span {
+          font-size: 10px;
+          font-weight: 600;
+          color: #444444;
+          background: #f7c14b85;
+          padding: 2px 4px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .bottom {
+      border: 2px solid #f7c14b85;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include lg {
+        flex: 1;
+      }
+
+      @include lg {
+        flex: none;
+      }
+
+      textarea {
+        height: 100%;
+        border: none;
+        flex: 3;
+        padding: 10px;
+        outline: none;
+      }
+
+      button {
+        flex: 1;
+        background: #f7c14b85;
+        height: 100%;
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+}

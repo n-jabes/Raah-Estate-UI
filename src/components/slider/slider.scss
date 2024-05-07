@@ -1,0 +1,129 @@
+@import '../../responsive.scss';
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: calc((100vh - 100px) / 2);
+  gap: 20px;
+
+  @include sm {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: max-content;
+  }
+
+  .fullSlider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000ef;
+    z-index: 10;
+
+    .arrow {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 35px;
+
+        &.right {
+          transform: rotate(180deg);
+        }
+
+        @include sm {
+          width: 20px;
+        }
+      }
+    }
+
+    .imgContainer {
+      flex: 10;
+      height: 90%;
+
+      @include md {
+        height: 60%;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .close {
+      color: white;
+      position: absolute;
+      top: 0px;
+      right: 35px;
+      padding: 25px;
+      font-size: 28px;
+      font-weight: 600;
+      cursor: pointer;
+
+      @include md {
+        right: 15px;
+        top: 15px;
+      }
+
+      @include sm {
+        right: 0px;
+        top: 10px;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .bigImage {
+    flex: 3;
+
+    @include sm {
+      flex: none;
+      width: 100%;
+    }
+  }
+  .smallImages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow-y: scroll;
+    gap: 10px;
+    padding-right: 10px;
+
+    @include sm {
+      width: 100%;
+      flex-direction: row;
+      overflow-y: hidden;
+      padding-bottom: 10px;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+    }
+
+    img {
+      height: 30%;
+
+      @include sm {
+        height: 75px;
+      }
+    }
+  }
+}
