@@ -1,12 +1,30 @@
+@import '../../responsive.scss';
+
 .profileUpdatePage {
   height: 100%;
   display: flex;
+
+  @include sm{
+    flex-direction: column-reverse;
+    height: max-content;
+    gap: 50px;
+  }
 
   .formContainer {
     flex:3;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include md{
+      flex: none;
+      width: 65%;
+    }
+
+    @include sm{
+
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -24,6 +42,10 @@
           padding: 20px;
           border-radius: 5px;
           border: 1px solid gray;
+
+          @include md{
+            padding: 10px;
+          }
         }
       }
       button {
@@ -47,9 +69,21 @@
     align-items: center;
     justify-content: center;
 
+     @include md{
+      flex: none;
+      width: 35%;
+      justify-content: start;
+      padding-top: 10%;
+      background: none;
+    }
+
     .avatar{
       width: 50%;
       object-fit: cover;
+
+      @include md{
+        width: 80%;
+      }
     }
   }
 }
