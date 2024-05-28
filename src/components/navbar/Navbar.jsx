@@ -16,7 +16,7 @@ function Navbar() {
           <span>RaahEstate</span>
         </a>
         <a href="/">Home</a>
-        <a href="/list">Properties</a>
+        <a href="/list">All properties</a>
         <a href="/">Contact</a>
         <a href="/">Agents</a>
       </div>
@@ -47,7 +47,7 @@ function Navbar() {
         </div>
         <div className={open ? 'menu active' : 'menu'}>
           <a href="/">Home</a>
-          <a href="/list">Properties</a>
+          <a href="/list">All properties</a>
           <a href="/">Contact</a>
           <a href="/">Agents</a>
           <a href="/">Sign in</a>

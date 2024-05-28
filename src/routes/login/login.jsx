@@ -11,6 +11,14 @@ function Login() {
   const {updateUser} = useContext(AuthContext);
   const navigate = useNavigate();
 
+  const handlePasswordChange = (e) => {
+    setError('')
+  }
+
+  const handleUsernameChange = (e) => {
+    setError('')
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -46,11 +54,13 @@ function Login() {
             minLength={3}
             maxLength={20}
             type="text"
+            onChange={handleUsernameChange}
             placeholder="Username"
           />
           <input
             name="password"
             required
+            onChange={handlePasswordChange}
             type="password"
             placeholder="Password"
           />
